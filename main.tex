@@ -1,0 +1,209 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article} % Reduced the base font size to 10pt
+
+% Packages and other document configurations
+% ... (Include all the packages and configurations from your template here)
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[margin=0.75in]{geometry} % Reduced margins to 0.5 inches all around
+
+\input{glyphtounicode}
+%----------FONT OPTIONS----------
+% Include your font package here
+%--------------------------------
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% \renewcommand{\familydefault}{\sfdefault}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tanay Nayak} \\ \vspace{1pt}
+    \small (667) 900-3506 $|$ \href{mailto:tnayak2@jhu.edu}{\underline{tnayak2@jhu.edu}} $|$ 
+    Baltimore, MD $|$
+    \href{https://www.linkedin.com/in/tanay-nayak/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/tanaynayak}{\underline{GitHub}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Johns Hopkins University}{Baltimore, MD}
+      {Master of Science in Engineering, Computer Science}{Expected 2025}
+    % Now add the details in a separate list right after the subheading
+    \begin{itemize}
+        \item Relevant Courses: Software System Design, Machine Learning, Machine Translation, Natural Language Processing (NLP), Intro Algorithms, Deep Learning, Computer Vision.
+        \item Student Researcher at Laboratory of Computational Intensive Care Medicine employing unsupervised ML techniques to predict subphenotypes in Traumatic Brain Injury patients.
+    \end{itemize}
+    
+    \resumeSubheading
+      {Manipal Institute of Technology}{Manipal, India}
+      {Bachelor of Technology, Computer Science and Engineering}{2021}
+    % Additional details for this entry
+    \begin{itemize}
+        \item Minor Specialization: Computational Mathematics.
+        \item Relevant Courses: Data Structures and Algorithms, Computer Architecture, Database Management, Software Testing.
+        \item Graduated with a CGPA of 8.63/10 with 9.5+ GPA (Certificate of Merit) in Senior Year.
+        \item Activities and Societies: Treasurer and Head of Quizzing Society, Core committee member at ACM Manipal Chapter.
+    \end{itemize}
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C/C++, Java, JavaScript} \\
+     \textbf{Tools and Technologies}{: HTML/CSS/JS, DevOps, CI/CD, Linux (Bash Scripting), SQL, Node.js, MongoDB, React} \\
+     \textbf{Data Science/AI}{: PyTorch, TensorFlow, Keras, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, SciPy} \\
+     \textbf{Other Skills}{: Statistics, Microsoft Office, Agile, Graphic Design (Adobe Photoshop/Illustrator)}
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Cisco Systems Inc.}{Bangalore, India}
+      {Software Engineer 2}{Sep 2022 - Jul 2023}
+      \resumeItemListStart
+        \resumeItem{Developed backend services for a MERN-based application, utilizing MongoDB and Kubernetes deployment.}
+        \resumeItem{Spearheaded design and implementation of a Scheduling and Governance System leveraging Python, Bash, MS SQL, and AngularJS.}
+        \resumeItem{Communicated product test data and efficiency improvement plans quarterly to stakeholders through interactive presentations.}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      % {Cisco Systems Inc.}{Bangalore, India}
+      % {} {}
+      {Software Engineer}{Aug 2021 - Aug 2022}
+      \resumeItemListStart
+        \resumeItem{Engineered a Continuous Deployment solution for global python package deployment, reducing production issues by 80\%.}
+        \resumeItem{Established CI pipelines for continuous unit testing and code quality control using tools Pytest, PEP8, and SonarQube, improving testing efficiency and overall code readability for 75+ Cisco product families.}
+      \resumeItemListEnd
+    \resumeSubSubheading
+      % {Cisco Systems Inc.}{Bangalore, India}
+      {Technical Undergraduate Intern}{Feb 2021 – Aug 2021}
+      \resumeItemListStart
+        \resumeItem{Transitioned a monolithic Application (Test Code Manager) to microservices using Flask, Pytest, and Robot Framework.}
+        \resumeItem{Deployed containerized python microservices on Kubernetes clusters, enabling a 50\% increase in deployment efficiency and ensuring 99.9\% uptime for critical applications.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SAP Labs}{Bangalore, India}
+      {iXp Intern}{May 2020 - Aug 2020}
+      \resumeItemListStart
+        \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery.}
+        \resumeItem{Designed a front-end test automation suite for S4HANA's Quotation to Cash segment using Selenium, Protractor, and Jasmine.}
+        \resumeItem{Collaborated with a global intern team on two microprojects: 'Drishti' – an app to assist the blind with digital payments and an integrated web application for the gamification of learning online courses.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Flexmoney Technologies Pvt. Ltd}{Mumbai, India}
+      {Intern}{May 2018 - Jul 2018}
+      \resumeItemListStart
+        \resumeItem{Conducted software testing and analysis for a Java-based financial web application, increasing bugs caught before production deployments by 30\%.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+        {\textbf{FinSight AI Suite}}{ }
+        \resumeItemListStart
+            \resumeItem{Engineered a MERN-based Finance Dashboard App with ML predictions leveraging Vite, Redux Toolkit, Material UI, Recharts on the frontend, and Node.js, Express.js, MongoDB in the backend for predictive financial analytics.}
+        \resumeItemListEnd
+    \resumeProjectHeading
+        {\textbf{Bioinformatics – Computational Drug Discovery}}{ }
+        \resumeItemListStart
+            \resumeItem{Collected ChEMBL data and computed molecular descriptors to build QSAR models and deployed it as a predictive web application for AChE inhibitors.}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------Additional Sections-----------
+% Here, you can add other sections as needed. For example, Certifications, Publications, Honors & Awards, etc.
+
+\end{document}
