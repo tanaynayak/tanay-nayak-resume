@@ -66,10 +66,16 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#1 - #2} & \textit{\small #4}
+      \def\temp{#3}%
+      \ifx\temp\empty % Adjust the vertical space as needed
+      \else
+        \\
+        \textit{\small#3}\\
+      \fi
     \end{tabular*}\vspace{-7pt}
 }
+
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
@@ -112,23 +118,27 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Johns Hopkins University}{Baltimore, MD}
-      {Master of Science in Engineering, Computer Science}{Expected 2025}
+      {Master of Science in Engineering, Computer Science}{2023 - 2025(Expected)}
     % Now add the details in a separate list right after the subheading
     \begin{itemize}
-        \item Relevant Courses: Software System Design, Machine Learning, Machine Translation, Natural Language Processing (NLP), Intro Algorithms, Deep Learning, Computer Vision.
+        \resumeItem{Relevant Courses: Software System Design, Machine Learning, Deep Learning, Computer Vision, Machine Translation, Natural Language Processing (NLP), Intro Algorithms.}
         \item Student Researcher at Laboratory of Computational Intensive Care Medicine employing unsupervised ML techniques to predict subphenotypes in Traumatic Brain Injury patients.
     \end{itemize}
     
     \resumeSubheading
       {Manipal Institute of Technology}{Manipal, India}
-      {Bachelor of Technology, Computer Science and Engineering}{2021}
+      {Bachelor of Technology, Computer Science and Engineering}{2017 - 2021}
     % Additional details for this entry
-    \begin{itemize}
-        \item Minor Specialization: Computational Mathematics.
-        \item Relevant Courses: Data Structures and Algorithms, Computer Architecture, Database Management, Software Testing.
-        \item Graduated with a CGPA of 8.63/10 with 9.5+ GPA (Certificate of Merit) in Senior Year.
-        \item Activities and Societies: Treasurer and Head of Quizzing Society, Core committee member at ACM Manipal Chapter.
-    \end{itemize}
+    \resumeItemListStart
+        \resumeItem{Minor Specialization: Computational Mathematics.}
+        \resumeItem{ Relevant Courses: Data Structures and Algorithms, Computer Architecture, Database Management, Software Testing.}
+        \resumeItem{ Graduated with a CGPA of 8.63/10 with 9.5+ GPA (Certificate of Merit) in Senior Year.}
+        \resumeItem{ Activities and Societies:}
+        \begin{itemize}[label=\textopenbullet]
+            \item {\small Treasurer and Head of Quizzing Society at the Literary, Debate and Quiz club}
+            \item {\small Core committee member at ACM Manipal Chapter.}
+        \end{itemize}
+    \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------SKILLS-----------
@@ -147,6 +157,8 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Cisco Systems Inc.}{Bangalore, India}
+      {}{Feb 2021 - Jul 2023}
+     \resumeSubSubheading
       {Software Engineer 2}{Sep 2022 - Jul 2023}
       \resumeItemListStart
         \resumeItem{Developed backend services for a MERN-based application, utilizing MongoDB and Kubernetes deployment.}
