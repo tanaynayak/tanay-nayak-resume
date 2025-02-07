@@ -1,0 +1,293 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article} % Reduced the base font size to 10pt
+
+% Packages and other document configurations
+% ... (Include all the packages and configurations from your template here)
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[margin=1in]{geometry} % Reduced margins to 0.5 inches all around
+
+\input{glyphtounicode}
+%----------FONT OPTIONS----------
+% Include your font package here
+%--------------------------------
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1 - #2} & \textit{\small #4}
+      \def\temp{#3}%
+      \ifx\temp\empty % Adjust the vertical space as needed
+      \else
+        \\
+        \textit{\small#3}\\
+      \fi
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+% \renewcommand{\familydefault}{\sfdefault}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tanay Nayak} \\ \vspace{1pt}
+    \small (667) 900-3506 $|$ \href{mailto:tnayak2@jhu.edu}{\underline{tnayak2@jhu.edu}} $|$ 
+    Baltimore, MD $|$
+    \href{https://www.linkedin.com/in/tanay-nayak/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/tanaynayak}{\underline{GitHub}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Johns Hopkins University}{Baltimore, MD}
+      {Master of Science in Engineering, Computer Science (GPA: 4.0)}{2023 - 2025(Expected)}
+    % Now add the details in a separate list right after the subheading
+    \begin{itemize}
+        \resumeItem{Relevant Courses: Software System Design, Machine Learning, Deep Learning, Computer Vision, Machine Translation, Natural Language Processing (NLP) Self-Supervised Models, Converstational UI Agents, Product Management.}
+        % \item Student Researcher at Laboratory of Computational Intensive Care Medicine employing unsupervised ML techniques to predict subphenotypes in Traumatic Brain Injury patients.
+    \end{itemize}
+    
+    \resumeSubheading
+      {Manipal Institute of Technology}{Manipal, India}
+      {Bachelor of Technology, Computer Science and Engineering (GPA: 3.7)}{2017 - 2021}
+    % Additional details for this entry
+    \resumeItemListStart
+        \resumeItem{Minor Specialization: Computational Mathematics.}
+        \resumeItem{ Relevant Courses: Data Structures and Algorithms, Computer Architecture, Database Management, Software Testing.}
+        % \resumeItem{ Graduated with a CGPA of 8.63/10 with 9.5+ GPA (Certificate of Merit) in Senior Year.}
+        % \resumeItem{ Activities and Societies:}
+        % \begin{itemize}[label=\textopenbullet]
+        %     \item {\small Treasurer and Head of Quizzing Society at the Literary, Debate and Quiz club}
+        %     \item {\small Core committee member at ACM Manipal Chapter.}
+        % \end{itemize}
+    \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, C/C++, Java, JavaScript, C\#, Go, R, Vue, PHP, Ruby} \\
+     \textbf{Tools and Technologies}{: Full-stack Web Development, DevOps, BigQuery, Docker, SQL, Kubernetes, Cloud Computing} \\
+     \textbf{Data Science/AI}{: PyTorch, CUDA, Image Processing, Model Training and Fine-tuning, Retrieval Augmented Generation(RAG)} \\
+     \textbf{Other Skills}{: Statistics, System Architecture and Design Patterns, Prompt Engineering, Agile, Research, Communication}
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {DataTecnica LLC}{Washington DC, DC}
+      {Research Intern}{October 2024 - Present}
+      \resumeItemListStart
+        \resumeItem{Developing an LLM powered agentic assistant for biomedical research and data discovery for the National Institutes of Health(NIH).}
+      \resumeItemListEnd
+  \resumeSubheading
+      {Center for Language and Speech Processing(CLSP), JHU}{Baltimore, MD}
+      {Summer Research Intern}{May 2024 - September 2024}
+      \resumeItemListStart
+        \resumeItem{Collaborated with Prof. Daniel Khashabi to develop an intelligent chatbot to interact with SQL and Elasticsearch databases using natural language queries, leveraging LangChain and OpenAI API to dynamically generate and execute queries.}
+        \resumeItem{Optimized data visualization and summarization using Streamlit, providing an intuitive UI through automated plotting and concise result summaries.}
+        \resumeItem{Deployed the application using Docker for local development, with Docker Compose for orchestration, and Singularity for production on a high-performance computing (HPC) environment.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Cisco Systems Inc.}{Bangalore, India}
+      {}{Feb 2021 - Jul 2023}
+     \resumeSubSubheading
+      {Software Engineer 2}{Sep 2022 - Jul 2023}
+      \resumeItemListStart
+        \resumeItem{Developed backend services for a MERN-based application, utilizing MongoDB and Kubernetes deployment.}
+        \resumeItem{Spearheaded design and implementation of a Scheduling and Governance System leveraging Python, Bash, MS SQL, and AngularJS.}
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+      % {Cisco Systems Inc.}{Bangalore, India}
+      % {} {}
+      {Software Engineer}{Aug 2021 - Aug 2022}
+      \resumeItemListStart
+        \resumeItem{Engineered a Continuous Deployment solution for global python package deployment, reducing production issues by 80\%.}
+        \resumeItem{Established end-to-end CI pipelines for continuous unit testing and code quality control using tools Pytest, PEP8, and SonarQube, improving testing efficiency and overall code readability for 75+ Cisco product families.}
+      \resumeItemListEnd
+    \resumeSubSubheading
+      % {Cisco Systems Inc.}{Bangalore, India}
+      {Technical Undergraduate Intern}{Feb 2021 – Aug 2021}
+      \resumeItemListStart
+        \resumeItem{Deployed containerized Flask microservices on Kubernetes clusters, enabling a 50\% increase in deployment efficiency and ensuring 99.9\% uptime for critical applications.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {SAP Labs}{Bangalore, India}
+      {iXp Intern}{May 2020 - Aug 2020}
+      \resumeItemListStart
+        % \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery.}
+        % \resumeItem{Designed a front-end test automation suite for S4HANA's Quotation to Cash segment using Selenium, Protractor, and Jasmine.}
+        % \resumeItem{Collaborated with a global intern team on two microprojects: 'Drishti' – an app to assist the blind with digital payments and an integrated web application for the gamification of learning online courses.}
+        \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery, and designed a front-end test automation suite for S4HANA's Quotation to Cash segment using Selenium, Protractor, and Jasmine.}
+      \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {Flexmoney Technologies Pvt. Ltd}{Mumbai, India}
+    %   {Intern}{May 2018 - Jul 2018}
+    %   \resumeItemListStart
+    %     \resumeItem{Conducted software testing and analysis for a Java-based financial web application, increasing bugs caught before production deployments by 30\%.}
+    %   \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{\href{https://github.com/tanaynayak/ai-agents-final-project}{CourseMate: A RAG-Driven Virtual Assistant for Accessible Academic Support}}}{Fall 2025}
+    \resumeItemListStart
+        % \resumeItem{Course requirement project for Daniel Khashabi's NLP Self Supervised Models (601.671) course, focusing on enhancing text-to-image models through Direct Preference Optimization (DPO) using the ImageReward dataset to align image generation with human preferences.}
+        % \resumeItem{Established's Direct Preference Optimization's adaptability to image-based Diffusion models, aiming to improve sentiment control and visual task response quality, leveraging advanced algorithms and a robust computational framework for significant advancements in multimodal AI research.}
+        \resumeItem{Designed and implemented a Retrieval-Augmented Generation (RAG) chatbot leveraging locally inferenced LLMs, providing tailored academic support, including context-aware Q\&A, paper summarization, and enhanced accessibility to CS education.}
+    \resumeItemListEnd
+  % \resumeProjectHeading{\textbf{Comparative Analysis of Deep Learning and Traditional ML in Deepfake Detection (Ongoing)}}{Spring 2024}
+  %   \resumeItemListStart
+  %       \resumeItem{Course Requirement project for Kapil Katyal's Computer Vision course (601.661) on the effectiveness of traditional ML methods and computer vision techniques versus deep learning in detecting deepfakes, leveraging datasets like FaceForensics++, DFDC, and Celeb-DF.}
+  %       \resumeItem{Developing a hybrid detection strategy combining CV methods (HOG, Optical Flow) with deep learning models (CNNs, LSTMs), aiming to enhance detection accuracy while managing computational demands.}
+  %   \resumeItemListEnd
+  % \resumeProjectHeading{\textbf{Comparative Analysis of Deep Learning and Traditional ML in Deepfake Detection}}{Spring 2024}
+  %   \resumeItemListStart
+  %       % \resumeItem{Course Requirement project for Kapil Katyal's Computer Vision course (601.661) on the effectiveness of traditional ML methods and computer vision techniques versus deep learning in detecting deepfakes, leveraging datasets like FaceForensics++, DFDC, and Celeb-DF.}
+  %       % \resumeItem{Developed a hybrid detection strategy combining CV methods (HOG, Optical Flow) with deep learning models (CNNs, LSTMs), enhancing detection accuracy while managing computational demands.}
+  %       \resumeItem{Evaluated traditional ML and computer vision techniques versus deep learning for deepfake detection and developed a hybrid strategy enhancing accuracy to 81\% on Kaggle's Deepfake Detection Challenge(DFDC).}
+  %       \resumeItemListEnd
+  % \resumeProjectHeading
+  %       {\textbf{Microcontroller based Universal Translator with Speech Recognition using LLMs}}{Fall 2023}
+  %       \resumeItemListStart
+  %           % \resumeItem{Developed a high-accuracy, real-time translation tool using the LLAMA 2 model and advanced quantization, optimized for microcontrollers.}
+  %           % \resumeItem{Utilized Python, ggml library, and BLEU score evaluation for enhanced performance on resource-constrained devices.}
+  %           % \resumeItem{Completed for Philip Koehn's Machine Translation course (601.468), earning an A+ with this project significantly contributing to the final grade.}
+  %           \resumeItem{Developed a high-accuracy, real-time translation tool using LLAMA 2 model and advanced quantization, optimized for microcontrollers with Python, ggml library, and BLEU score evaluation for enhanced performance on resource-constrained devices.}
+  %       \resumeItemListEnd
+    
+    % \resumeProjectHeading
+    %     {\textbf{FinSight AI Suite}}{2022}
+    %     \resumeItemListStart
+    %         \resumeItem{Engineered a MERN-based Finance Dashboard App with ML predictions leveraging Vite, Redux Toolkit, Material UI, Recharts on the frontend, and Node.js, Express.js, MongoDB in the backend for predictive financial analytics.}
+    %     \resumeItemListEnd
+    % \resumeProjectHeading
+    %     {\textbf{Bioinformatics – Computational Drug Discovery}}{2022}
+    %     \resumeItemListStart
+    %         \resumeItem{Collected ChEMBL data and computed molecular descriptors to build QSAR models and deployed it as a predictive web application for AChE inhibitors.}
+    %       \resumeItemListEnd
+    % \resumeProjectHeading
+    % {\textbf{Fantasy PL Player Position Prediction}}{2020}
+    % \resumeItemListStart
+    %     \resumeItem{Utilized Python libraries (Pandas, NumPy, Scikit-learn) for analyzing and predicting EPL players' positions based on the 2019/2020 season data, achieving high accuracy with Logistic Regression.}
+    %     \resumeItem{Applied feature engineering and data visualization techniques for model optimization and fetched latest season data via API, extending predictive capabilities to new datasets.}
+    % \resumeItemListEnd
+    % \resumeProjectHeading
+    % {\textbf{Song Feature Extraction and Recommendation System}}{2020}
+    % \resumeItemListStart
+    %     \resumeItem{Developed a Python-based solution utilizing Spotify's API and parallel processing to enrich a raw song dataset with detailed features, including musical attributes, popularity, and genres.}
+    %     \resumeItem{Implemented advanced data processing techniques, including TF-IDF for genre analysis and sentiment analysis on song titles, and constructed a recommendation algorithm based on cosine similarity.}
+    % \resumeItemListEnd
+
+
+    
+      
+  \resumeSubHeadingListEnd
+
+%-----------Additional Sections-----------
+\section{Publications}
+\resumeItemListStart
+    \resumeItem{\textbf{\href{https://arxiv.org/abs/2403.11905}{Tur[k]ingBench: A Challenge Benchmark for Web Agents:}} Developed a benchmark for evaluating multi-modal models on complex web-based crowdsourcing tasks, highlighting performance gaps in web-based agent development. (\textit{NAACL, Sep 2024})}
+\resumeItemListEnd
+% Here, you can add other sections as needed. For example, Certifications, Publications, Honors & Awards, etc.
+% \section{Extracurriculars}
+% \resumeItemListStart
+%    \resumeItem{Organized Cisco Supply Chain India All Hands, Corporate Social Responsibility Volunteer events, and Community Track Events. Invited guest speakers, and executed team-building events, and inter-departmental competitions as a member of the core team. \hfill (2021 - 2023)}
+%    \resumeItem{Won the 1st Position in a National level Supply Chain Case Competition – GEP Gameplan, organized by GEP Worldwide for presenting an elaborate solution to a Supply Chain based case study. \hfill (2020)}
+%    \resumeItem{Invited to moderate a Just-A-Minute speaking event by Article 19, the cultural festival of, as the Just-A-Minute Moderator at the School of Communication, Manipal; secured 2nd Place in JAM at Incident, NIT Surathkal. \hfill (2020)}
+%    \resumeItem{Volunteered at local cleanup drives, Blood donation campaigns, and old age home visits in Udupi, Karnataka, as a Local Volunteer at AIESEC, Manipal. \hfill (2018-2021)}
+%    \resumeItem{Conducted workshops on various computer science topics and partnered with Teach Code for Good (TCFG) to volunteer to teach basic computer skills to the less fortunate in Karnataka as a Core Committee member at the Association of Computing Machinery, Manipal Chapter. \hfill (2017-2020)}
+% \resumeItemListEnd
+
+% {
+% \color{white}
+% \tiny\
+% Data Scientist, Intern, Machine Learning, Data Insights, Algorithmic Solutions, Search, Personalization, Recommender Systems, Ranking, Retailer Growth, Signal Extraction, Entity Resolution, Confidence-Score Models, Underwriting, Anti-Abuse, Content-Based Recommendations, User Signals, Computer Vision, A/B Testing, Python, Sklearn, NumPy, Pandas, SQL, Bayesian Methods, Experimental Design, Causal Inference, Master’s, PhD, Computer Science, Operations Research, Statistics, Econometrics, Technical Field, Real Datasets, Flexible Work Model, Remote Work, cross-functional, e-commerce, end-to-end
+% }
+\end{document}

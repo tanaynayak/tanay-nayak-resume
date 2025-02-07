@@ -21,7 +21,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage[margin=0.75in]{geometry} % Reduced margins to 0.5 inches all around
+\usepackage[margin=1in]{geometry} % Reduced margins to 0.5 inches all around
 
 \input{glyphtounicode}
 %----------FONT OPTIONS----------
@@ -59,7 +59,7 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1 \vspace{-1pt}}
   }
 }
 
@@ -146,7 +146,7 @@
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
      \textbf{Programming Languages}{: Python, C/C++, Java, JavaScript} \\
-     \textbf{Tools and Technologies}{: HTML/CSS/JS, DevOps, CI/CD, Linux (Bash Scripting), SQL, Node.js, MongoDB, React} \\
+     \textbf{Tools and Technologies}{: HTML/CSS/JS, DevOps, CI/CD, Docker, Jenkins, SQL, Kubernetes, Node.js, MongoDB, React} \\
      \textbf{Data Science/AI}{: PyTorch, TensorFlow, Keras, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, SciPy} \\
      \textbf{Other Skills}{: Statistics, Microsoft Office, Agile, Graphic Design (Adobe Photoshop/Illustrator)}
     }}
@@ -155,6 +155,14 @@
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
+   \resumeSubheading
+      {Center for Language and Speech Processing(CLSP), JHU}{Baltimore, MD}
+      {Summer Research Intern}{May 2024 - Present}
+      \resumeItemListStart
+        \resumeItem{Developed an intelligent chatbot web app enabling researchers to interact with SQL and Elasticsearch databases using natural language queries, leveraging advanced NLP techniques with LangChain and OpenAI API to dynamically generate and execute queries.}
+        \resumeItem{Optimized data visualization and summarization capabilities using Streamlit, providing intuitive user interfaces and actionable insights through automated plotting and concise result summaries.}
+        \resumeItem{Deployed the application using Docker for local development, with Docker Compose for orchestration, and Singularity for production on a high-performance computing (HPC) environment.}
+      \resumeItemListEnd
     \resumeSubheading
       {Cisco Systems Inc.}{Bangalore, India}
       {}{Feb 2021 - Jul 2023}
@@ -186,37 +194,80 @@
       {SAP Labs}{Bangalore, India}
       {iXp Intern}{May 2020 - Aug 2020}
       \resumeItemListStart
-        \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery.}
-        \resumeItem{Designed a front-end test automation suite for S4HANA's Quotation to Cash segment using Selenium, Protractor, and Jasmine.}
+        % \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery.}
+        % \resumeItem{Designed a front-end test automation suite for S4HANA's Quotation to Cash segment using Selenium, Protractor, and Jasmine.}
+        \resumeItem{Created a subscription-based web application for aggregating internal incidents with email reports using Python and jQuery, and designed a front-end test automation suite for S4HANA using Selenium, Protractor, and Jasmine.}
         \resumeItem{Collaborated with a global intern team on two microprojects: 'Drishti' – an app to assist the blind with digital payments and an integrated web application for the gamification of learning online courses.}
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Flexmoney Technologies Pvt. Ltd}{Mumbai, India}
-      {Intern}{May 2018 - Jul 2018}
-      \resumeItemListStart
-        \resumeItem{Conducted software testing and analysis for a Java-based financial web application, increasing bugs caught before production deployments by 30\%.}
-      \resumeItemListEnd
+    % \resumeSubheading
+    %   {Flexmoney Technologies Pvt. Ltd}{Mumbai, India}
+    %   {Intern}{May 2018 - Jul 2018}
+    %   \resumeItemListStart
+    %     \resumeItem{Conducted software testing and analysis for a Java-based financial web application, increasing bugs caught before production deployments by 30\%.}
+    %   \resumeItemListEnd
 
-  \resumeSubHeadingListEnd
+  \resumeSubHeadingListEnd\newpage
 
 %-----------PROJECTS-----------
 \section{Projects}
   \resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{Enhancing Text-to-Image Generation with Human Preference Alignment}}{Spring 2024}
+    \resumeItemListStart
+        \resumeItem{Course requirement project for Daniel Khashabi's NLP Self Supervised Models (601.671) course, focusing on enhancing text-to-image models through Direct Preference Optimization (DPO) using the ImageReward dataset to align image generation with human preferences.}
+        \resumeItem{Established DPO's adaptability to image-based models, aiming to improve sentiment control and visual task response quality, leveraging advanced algorithms and a robust computational framework for significant advancements in multimodal AI research.}
+    \resumeItemListEnd
+  \resumeProjectHeading{\textbf{Comparative Analysis of Deep Learning and Traditional ML in Deepfake Detection}}{Spring 2024}
+    \resumeItemListStart
+        \resumeItem{Course Requirement project for Kapil Katyal's Computer Vision course (601.661) on the effectiveness of traditional ML methods and computer vision techniques versus deep learning in detecting deepfakes, leveraging datasets like FaceForensics++, DFDC, and Celeb-DF.}
+        \resumeItem{Developed a hybrid detection strategy combining CV methods (HOG, Optical Flow) with deep learning models (CNNs, LSTMs), enhancing detection accuracy while managing computational demands.}
+    \resumeItemListEnd
+  \resumeProjectHeading
+        {\textbf{Universal Translator with Speech Recognition (Microcontroller)}}{Fall 2023}
+        \resumeItemListStart
+            \resumeItem{Developed a high-accuracy, real-time translation tool using the LLAMA 2 model and advanced quantization, optimized for microcontrollers.}
+            \resumeItem{Utilized Python, ggml library, and BLEU score evaluation for enhanced performance on resource-constrained devices.}
+            \resumeItem{Completed for Philip Koehn's Machine Translation course (601.468), earning an A+ with this project significantly contributing to the final grade.}
+        \resumeItemListEnd
     \resumeProjectHeading
-        {\textbf{FinSight AI Suite}}{ }
+        {\textbf{FinSight AI Suite}}{2022}
         \resumeItemListStart
             \resumeItem{Engineered a MERN-based Finance Dashboard App with ML predictions leveraging Vite, Redux Toolkit, Material UI, Recharts on the frontend, and Node.js, Express.js, MongoDB in the backend for predictive financial analytics.}
         \resumeItemListEnd
     \resumeProjectHeading
-        {\textbf{Bioinformatics – Computational Drug Discovery}}{ }
+        {\textbf{Bioinformatics – Computational Drug Discovery}}{2022}
         \resumeItemListStart
             \resumeItem{Collected ChEMBL data and computed molecular descriptors to build QSAR models and deployed it as a predictive web application for AChE inhibitors.}
-        \resumeItemListEnd
+          \resumeItemListEnd
+    \resumeProjectHeading
+    {\textbf{Fantasy PL Player Position Prediction}}{2020}
+    \resumeItemListStart
+        \resumeItem{Utilized Python libraries (Pandas, NumPy, Scikit-learn) for analyzing and predicting EPL players' positions based on the 2019/2020 season data, achieving high accuracy with Logistic Regression.}
+        \resumeItem{Applied feature engineering and data visualization techniques for model optimization and fetched latest season data via API, extending predictive capabilities to new datasets.}
+    \resumeItemListEnd
+    \resumeProjectHeading
+    {\textbf{Song Feature Extraction and Recommendation System}}{2020}
+    \resumeItemListStart
+        \resumeItem{Developed a Python-based solution utilizing Spotify's API and parallel processing to enrich a raw song dataset with detailed features, including musical attributes, popularity, and genres.}
+        \resumeItem{Implemented advanced data processing techniques, including TF-IDF for genre analysis and sentiment analysis on song titles, and constructed a recommendation algorithm based on cosine similarity.}
+    \resumeItemListEnd
+
+
+    
+      
   \resumeSubHeadingListEnd
 
 %-----------Additional Sections-----------
 % Here, you can add other sections as needed. For example, Certifications, Publications, Honors & Awards, etc.
+\section{Extracurriculars}
+\resumeItemListStart
+   \resumeItem{Organized Cisco Supply Chain India All Hands, Corporate Social Responsibility Volunteer events, and Community Track Events. Invited guest speakers, and executed team-building events, and inter-departmental competitions as a member of the core team. \hfill (2021 - 2023)}
+   \resumeItem{Won the 1st Position in a National level Supply Chain Case Competition – GEP Gameplan, organized by GEP Worldwide for presenting an elaborate solution to a Supply Chain based case study. \hfill (2020)}
+   \resumeItem{Invited to moderate a Just-A-Minute speaking event by Article 19, the cultural festival of, as the Just-A-Minute Moderator at the School of Communication, Manipal; secured 2nd Place in JAM at Incident, NIT Surathkal. \hfill (2020)}
+   \resumeItem{Volunteered at local cleanup drives, Blood donation campaigns, and old age home visits in Udupi, Karnataka, as a Local Volunteer at AIESEC, Manipal. \hfill (2018-2021)}
+   \resumeItem{Conducted workshops on various computer science topics and partnered with Teach Code for Good (TCFG) to volunteer to teach basic computer skills to the less fortunate in Karnataka as a Core Committee member at the Association of Computing Machinery, Manipal Chapter. \hfill (2017-2020)}
+\resumeItemListEnd
+
 % {
 % \color{white}
 % \tiny\

@@ -1,0 +1,279 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\begin{document}
+
+\section*{Question 1}
+
+You are given a dataset \( D = \{ (\vec{x}_i, y_i) \}_{i=1}^n \) with \( n \) observations and \( p \) features, where \( p \gg n \). You aim to predict the response variable \( y \) using linear regression but are concerned about overfitting due to the high dimensionality.
+
+\begin{enumerate}
+    \item[(a)] \textbf{Ridge Regression:}
+    
+    The Ridge regression estimator minimizes the following objective function:
+    
+    \[
+    J_{\text{Ridge}}(\beta) = \sum_{i=1}^n (y_i - \vec{x}_i^\top \beta)^2 + \lambda \sum_{j=1}^p \beta_j^2
+    \]
+    
+    Derive the closed-form solution for the Ridge regression coefficients \( \beta \). Explain mathematically how the regularization term \( \lambda \sum_{j=1}^p \beta_j^2 \) addresses the issue of multicollinearity and overfitting in high-dimensional datasets.
+    
+    \item[(b)] \textbf{Lasso Regression:}
+    
+    The Lasso regression estimator minimizes the following objective function:
+    
+    \[
+    J_{\text{Lasso}}(\beta) = \sum_{i=1}^n (y_i - \vec{x}_i^\top \beta)^2 + \lambda \sum_{j=1}^p |\beta_j|
+    \]
+    
+    Explain why the Lasso regression does not have a closed-form solution. Discuss the role of the \( L_1 \) regularization term in inducing sparsity in the coefficient vector \( \beta \). Use mathematical arguments to illustrate how Lasso can perform feature selection.
+    
+    \item[(c)] \textbf{Bias-Variance Tradeoff and Model Selection:}
+    
+    Consider the bias-variance decomposition of the Mean Squared Error (MSE):
+    
+    \[
+    \text{MSE} = \text{Bias}^2 + \text{Variance} + \sigma^2
+    \]
+    
+    Analyze how Ridge regression and Lasso regression impact the bias and variance components of the MSE. Provide mathematical reasoning to justify under what conditions you would prefer Lasso over Ridge regression, and vice versa, particularly in the context of high-dimensional data where only a subset of features is truly relevant.
+\end{enumerate}
+
+\section*{Answer to Question 1}
+
+\begin{enumerate}
+    \item[(a)] \textbf{Ridge Regression Solution}
+    
+    The Ridge regression objective function can be written in matrix form as:
+    
+    \[
+    J_{\text{Ridge}}(\beta) = (Y - X\beta)^\top (Y - X\beta) + \lambda \beta^\top \beta
+    \]
+    
+    To find the closed-form solution, we take the derivative of \( J_{\text{Ridge}}(\beta) \) with respect to \( \beta \) and set it to zero:
+    
+    \[
+    \frac{\partial J_{\text{Ridge}}}{\partial \beta} = -2X^\top(Y - X\beta) + 2\lambda \beta = 0
+    \]
+    
+    Simplifying:
+    
+    \[
+    X^\top Y - X^\top X \beta + \lambda \beta = 0
+    \]
+    
+    Rearranging terms:
+    
+    \[
+    (X^\top X + \lambda I) \beta = X^\top Y
+    \]
+    
+    Thus, the closed-form solution for the Ridge regression coefficients is:
+    
+    \[
+    \beta = (X^\top X + \lambda I)^{-1} X^\top Y
+    \]
+    
+    \textbf{Explanation:}
+    
+    - The regularization term \( \lambda \beta^\top \beta \) adds \( \lambda I \) to the matrix \( X^\top X \), which can be nearly singular when \( p \gg n \) due to multicollinearity.
+    - By ensuring \( X^\top X + \lambda I \) is invertible, Ridge regression stabilizes the solution.
+    - The penalty shrinks the coefficients, reducing variance and mitigating overfitting.
+    
+    \item[(b)] \textbf{Lasso Regression Solution}
+    
+    The Lasso regression objective function includes an \( L_1 \) penalty:
+    
+    \[
+    J_{\text{Lasso}}(\beta) = \sum_{i=1}^n (y_i - \vec{x}_i^\top \beta)^2 + \lambda \sum_{j=1}^p |\beta_j|
+    \]
+    
+    \textbf{Explanation of No Closed-Form Solution:}
+    
+    - The \( L_1 \) norm \( \sum_{j=1}^p |\beta_j| \) is not differentiable at \( \beta_j = 0 \).
+    - This non-differentiability prevents us from setting the gradient to zero and solving analytically.
+    - Instead, optimization algorithms like coordinate descent are used.
+    
+    \textbf{Role of \( L_1 \) Regularization in Inducing Sparsity:}
+    
+    - The \( L_1 \) penalty encourages coefficients to be exactly zero.
+    - This results in a sparse coefficient vector \( \beta \), effectively performing feature selection.
+    
+    \textbf{Mathematical Illustration:}
+    
+    - Consider the subgradient of the absolute value function:
+    
+      \[
+      \frac{\partial}{\partial \beta_j} |\beta_j| = 
+      \begin{cases}
+      1 & \text{if } \beta_j > 0 \\
+      -1 & \text{if } \beta_j < 0 \\
+      \text{undefined} & \text{if } \beta_j = 0
+      \end{cases}
+      \]
+    
+    - The optimization problem pushes small coefficients towards zero, and when they reach zero, they can remain exactly zero.
+    
+    \item[(c)] \textbf{Bias-Variance Tradeoff and Model Selection}
+    
+    \textbf{Impact on Bias and Variance:}
+    
+    - \textbf{Ridge Regression:}
+      - Increases bias by shrinking coefficients but reduces variance.
+      - Does not set coefficients exactly to zero.
+    - \textbf{Lasso Regression:}
+      - Can increase bias more due to stronger penalization.
+      - Reduces variance by eliminating irrelevant features.
+      - Performs variable selection, which can lead to a simpler model.
+    
+    \textbf{Preference Under Specific Conditions:}
+    
+    - \textbf{Lasso Preferred When:}
+      - The true model is sparse (only a few predictors are significant).
+      - Interpretability is important.
+      - Feature selection is desired.
+    - \textbf{Ridge Preferred When:}
+      - All predictors are believed to have some effect.
+      - Multicollinearity is present.
+      - The goal is to shrink coefficients but keep them in the model.
+    
+    \textbf{Mathematical Reasoning:}
+    
+    - The expected prediction error can be decomposed into bias and variance components.
+    - Ridge regression tends to have lower variance but higher bias compared to ordinary least squares.
+    - Lasso may have higher bias due to zeroing out coefficients but can significantly reduce variance when irrelevant features are present.
+    - In high-dimensional settings with irrelevant features, Lasso's feature selection can lead to better generalization.
+    
+\end{enumerate}
+
+\newpage
+
+\section*{Question 2}
+
+Consider a multiclass classification problem with \( K \) classes and input features \( \vec{x} \in \mathbb{R}^d \). You are comparing two modeling approaches: Quadratic Discriminant Analysis (QDA) and Multiclass Logistic Regression.
+
+\begin{enumerate}
+    \item[(a)] \textbf{Quadratic Discriminant Analysis (QDA):}
+    
+    QDA models the class-conditional densities as multivariate Gaussians with class-specific mean vectors \( \vec{\mu}_k \) and covariance matrices \( \Sigma_k \):
+    
+    \[
+    p(\vec{x} | y = k) = \frac{1}{(2\pi)^{d/2} |\Sigma_k|^{1/2}} \exp\left( -\frac{1}{2} (\vec{x} - \vec{\mu}_k)^\top \Sigma_k^{-1} (\vec{x} - \vec{\mu}_k) \right)
+    \]
+    
+    Derive the expression for the log-likelihood ratio \( \log \left( \frac{p(y = k | \vec{x})}{p(y = l | \vec{x})} \right) \) and show that the decision boundary between any two classes \( k \) and \( l \) is quadratic in \( \vec{x} \).
+    
+    \item[(b)] \textbf{Multiclass Logistic Regression:}
+    
+    Multiclass Logistic Regression models the conditional probability of class membership using the softmax function:
+    
+    \[
+    p(y = k | \vec{x}) = \frac{\exp(\beta_k^\top \vec{x})}{\sum_{j=1}^K \exp(\beta_j^\top \vec{x})}
+    \]
+    
+    Derive the expression for the decision boundary between classes \( k \) and \( l \) by setting \( p(y = k | \vec{x}) = p(y = l | \vec{x}) \). Show that this results in a linear decision boundary in \( \vec{x} \).
+    
+    \item[(c)] \textbf{Model Selection and Decision Boundaries:}
+    
+    Considering your results from parts (a) and (b), discuss under what circumstances QDA might outperform Multiclass Logistic Regression, and vice versa. Use mathematical reasoning to explain how the assumptions about the covariance matrices \( \Sigma_k \) in QDA and the linearity of decision boundaries in Logistic Regression influence their performance on datasets with complex, nonlinear class structures.
+\end{enumerate}
+
+\section*{Answer to Question 2}
+
+\begin{enumerate}
+    \item[(a)] \textbf{Quadratic Discriminant Analysis (QDA) Solution}
+    
+    The posterior probability using Bayes' theorem is:
+    
+    \[
+    p(y = k | \vec{x}) = \frac{p(\vec{x} | y = k) p(y = k)}{p(\vec{x})}
+    \]
+    
+    The log-likelihood ratio between classes \( k \) and \( l \) is:
+    
+    \[
+    \log \left( \frac{p(y = k | \vec{x})}{p(y = l | \vec{x})} \right) = \log \left( \frac{p(\vec{x} | y = k) p(y = k)}{p(\vec{x} | y = l) p(y = l)} \right)
+    \]
+    
+    Substitute the Gaussian densities:
+    
+    \begin{align*}
+    & \log \left( \frac{p(\vec{x} | y = k)}{p(\vec{x} | y = l)} \right) + \log \left( \frac{p(y = k)}{p(y = l)} \right) \\
+    &= -\frac{1}{2} \left[ (\vec{x} - \vec{\mu}_k)^\top \Sigma_k^{-1} (\vec{x} - \vec{\mu}_k) - (\vec{x} - \vec{\mu}_l)^\top \Sigma_l^{-1} (\vec{x} - \vec{\mu}_l) \right] \\
+    &\quad - \frac{1}{2} \left[ \log |\Sigma_k| - \log |\Sigma_l| \right ] + \log \left( \frac{p(y = k)}{p(y = l)} \right)
+    \end{align*}
+    
+    The decision boundary between classes \( k \) and \( l \) is where this log-likelihood ratio equals zero:
+    
+    \[
+    \log \left( \frac{p(y = k | \vec{x})}{p(y = l | \vec{x})} \right) = 0
+    \]
+    
+    This simplifies to:
+    
+    \[
+    (\vec{x}^\top A \vec{x}) + \vec{b}^\top \vec{x} + c = 0
+    \]
+    
+    where \( A \) is a matrix derived from \( \Sigma_k^{-1} \) and \( \Sigma_l^{-1} \), \( \vec{b} \) is a vector, and \( c \) is a scalar. This is a quadratic equation in \( \vec{x} \), confirming that the decision boundary is quadratic.
+    
+    \item[(b)] \textbf{Multiclass Logistic Regression Solution}
+    
+    Setting \( p(y = k | \vec{x}) = p(y = l | \vec{x}) \):
+    
+    \[
+    \frac{\exp(\beta_k^\top \vec{x})}{\sum_{j=1}^K \exp(\beta_j^\top \vec{x})} = \frac{\exp(\beta_l^\top \vec{x})}{\sum_{j=1}^K \exp(\beta_j^\top \vec{x})}
+    \]
+    
+    Simplify the equation:
+    
+    \[
+    \exp(\beta_k^\top \vec{x}) = \exp(\beta_l^\top \vec{x})
+    \]
+    
+    Take the natural logarithm of both sides:
+    
+    \[
+    \beta_k^\top \vec{x} = \beta_l^\top \vec{x}
+    \]
+    
+    Subtract \( \beta_l^\top \vec{x} \) from both sides:
+    
+    \[
+    (\beta_k - \beta_l)^\top \vec{x} = 0
+    \]
+    
+    This equation represents a hyperplane in \( \vec{x} \), indicating that the decision boundary between classes \( k \) and \( l \) is linear.
+    
+    \item[(c)] \textbf{Model Selection and Decision Boundaries}
+    
+    \textbf{When QDA Might Outperform Multiclass Logistic Regression:}
+    
+    - The true class boundaries are nonlinear.
+    - Classes have different covariance structures (\( \Sigma_k \neq \Sigma_l \)).
+    - The assumption of multivariate normality with different covariances is reasonable.
+    
+    \textbf{When Multiclass Logistic Regression Might Outperform QDA:}
+    
+    - The classes are linearly separable.
+    - Simpler models are preferred due to computational considerations.
+    - The assumption of equal covariance matrices is valid, or differences are negligible.
+    
+    \textbf{Mathematical Reasoning:}
+    
+    - \textbf{QDA} captures nonlinear boundaries because the quadratic terms in the discriminant functions allow for curved decision surfaces.
+    - \textbf{Multiclass Logistic Regression} assumes linear decision boundaries, which may not fit complex data structures.
+    
+    \textbf{Influence of Covariance Matrices \( \Sigma_k \):}
+    
+    - In QDA, different \( \Sigma_k \) allow the model to adjust for varying spreads and orientations of the classes.
+    - If \( \Sigma_k = \Sigma_l \) for all \( k, l \), QDA reduces to Linear Discriminant Analysis (LDA), which has linear boundaries.
+    - Logistic regression does not model covariance structures, limiting its flexibility.
+    
+    \textbf{Conclusion:}
+    
+    - Use QDA when the data exhibits significant class-dependent variance and covariance differences, leading to nonlinear boundaries.
+    - Use Multiclass Logistic Regression when the decision boundaries are approximately linear or when a simpler model suffices.
+    
+\end{enumerate}
+
+\end{document}
